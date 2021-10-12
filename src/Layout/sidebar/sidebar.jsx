@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import {
     Box, Drawer, Divider, List,
     ListItem, ListItemIcon, ListItemText, IconButton } from "@mui/material";
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import InboxIcon from "@mui/icons-material/Inbox";
 import MailIcon from "@mui/icons-material/Mail";
 import ChevronLeftIcon  from "@mui/icons-material/ChevronLeft"
@@ -29,14 +29,14 @@ export const Sidebar = () => {
                     {text: "Home", path: "/" }, 
                     {text: "Transactions", path: "/transactions" }
                 ].map((item, index) => (
-                <Link to={item.path} className="decoration-none">
+                <NavLink exact to={item.path} className="decoration-none" activeClassName="selected">
                     <ListItem button key={item.text}>
                         <ListItemIcon>
                         {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
                         </ListItemIcon>
                         <ListItemText primary={item.text}  />
                      </ListItem>
-                </Link>
+                </NavLink>
               
             ))}
           </List>

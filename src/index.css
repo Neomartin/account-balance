@@ -29,7 +29,12 @@ html {
 
 .decoration-none {
   text-decoration: none !important;
+  background-color: inherit;
 }
 .capitalize {
   text-transform: capitalize;
+}
+
+a.selected > * {
+  background-color: antiquewhite;
 }
